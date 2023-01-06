@@ -270,7 +270,6 @@ dfig1.Children.FontSize = 18;
 legend('Linear', 'Adaptive', 'Post-Adaptation', 'Non-Linear', 'NL Post-Adaptation')
 
 saveas(dfig1, "Figures/PNG/StepDistance", "png")
-saveas(dfig1, "Figures/JPG/StepDistance", "jpg")
 
 
 % ======================== Sinusoid Response =============================
@@ -295,7 +294,6 @@ dfig2.Children.FontSize = 18;
 legend('Linear', 'Adaptive', 'Post-Adaptation', 'Non-Linear', 'NL Post-Adaptation')
 
 saveas(dfig2, "Figures/PNG/SinusoidDistance", "png")
-saveas(dfig2, "Figures/JPG/SinusoidDistance", "jpg")
 
 
 function u = linearControl(x,xd)
@@ -697,7 +695,6 @@ for i = 1:6
 end
 
 saveas(fig, "Figures/PNG/"+save_path, 'png')
-saveas(fig, "Figures/JPG/"+save_path, 'jpg')
 end
 
 function plotAdaptiveStates(t, x, r, title_suff)
@@ -725,7 +722,6 @@ legend('Actual', 'Model', 'Reference')
 mask = ~isspace(title_suff);
 c = char(title_suff);
 saveas(fig, "Figures/PNG/AdaptiveControl" + c(mask), 'png')
-saveas(fig, "Figures/JPG/AdaptiveControl" + c(mask), 'jpg')
 
 fig = figure;
 plot(t, x(:,13:24), 'linewidth', 2)
@@ -734,7 +730,6 @@ xlabel('Time [s]')
 title("Gains")
 
 saveas(fig, "Figures/PNG/AdaptiveControl" + c(mask) + "Kx", 'png')
-saveas(fig, "Figures/JPG/AdaptiveControl" + c(mask) + "Kx", 'jpg')
 
 fig = figure;
 plot(t, x(:,25:end), 'linewidth', 2)
@@ -743,7 +738,6 @@ xlabel('Time [s]')
 title("Gains")
 
 saveas(fig, "Figures/PNG/AdaptiveControl" + c(mask) + "Kr", 'png')
-saveas(fig, "Figures/JPG/AdaptiveControl" + c(mask) + "Kr", 'jpg')
 end
 
 function plotAdaptiveStates2(t, x, r, subplot_title)
@@ -771,7 +765,6 @@ legend('Actual', 'Model', 'Reference')
 mask = ~isspace(subplot_title);
 c = char(subplot_title);
 saveas(fig, "Figures/PNG/" + c(mask), 'png')
-saveas(fig, "Figures/JPG/" + c(mask), 'jpg')
 
 fig = figure;
 plot(t, x(:,13:24), 'linewidth', 2)
@@ -780,7 +773,6 @@ xlabel('Time [s]')
 title("Gains")
 
 saveas(fig, "Figures/PNG/" + c(mask) + "Kx", 'png')
-saveas(fig, "Figures/JPG/" + c(mask) + "Kx", 'jpg')
 
 fig = figure;
 plot(t, x(:,25:28), 'linewidth', 2)
@@ -789,7 +781,6 @@ xlabel('Time [s]')
 title("Gains")
 
 saveas(fig, "Figures/PNG/" + c(mask) + "Kr", 'png')
-saveas(fig, "Figures/JPG/" + c(mask) + "Kr", 'jpg')
 
 fig = figure;
 plot(t, x(:,29:end), 'linewidth', 2)
@@ -798,5 +789,4 @@ xlabel('Time [s]')
 title("Gains")
 
 saveas(fig, "Figures/PNG/" + c(mask) + "Ka", 'png')
-saveas(fig, "Figures/JPG/" + c(mask) + "Ka", 'jpg')
 end
